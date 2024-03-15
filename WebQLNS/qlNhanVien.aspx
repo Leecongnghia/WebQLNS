@@ -2,8 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2 class="align-center"> DANH SÁCH NHÂN VIÊN</h2>
+    <h2 style="text-align:center"> DANH SÁCH NHÂN VIÊN</h2>
     <hr />
+    <div>
+        <a href="themNhanVien.aspx" class="btn text-light border border-1 border-black" style="background-color:slategray"  >Thêm Nhân Viên</a>
+    </div>
 
     <asp:SqlDataSource ID="dsNhanVien" runat="server"  
         ConnectionString="<%$ ConnectionStrings:QLNhanVienConnectionString %>" 
@@ -35,19 +38,34 @@
 </asp:SqlDataSource>
 
     <asp:GridView  ID="gvNhanVien" runat="server" AutoGenerateColumns="False" AlternatingRowStyle-Font-Size="Medium"
-        CssClass=" table table-bordered table-hover " AllowCustomPaging="true"
-        DataKeyNames="MaNV" DataSourceID="dsNhanVien">
+        CssClass="  table-bordered table-hover w-100 text-center " AllowCustomPaging="True"
+        DataKeyNames="MaNV" DataSourceID="dsNhanVien" AllowPaging="True" PageSize="5" CellPadding="4"  GridLines="None" ForeColor="#333333">
+        <AlternatingRowStyle Font-Size="Medium" BackColor="White"></AlternatingRowStyle>
         <Columns>
             <asp:BoundField DataField="MaNV" HeaderText="Mã Nhân Viên"  ReadOnly="True"  />
             <asp:BoundField DataField="HoNV" HeaderText="Họ Nhân Viên"  />
             <asp:BoundField DataField="TenNV" HeaderText="Tên Nhân Viên"  />
             <asp:CheckBoxField DataField="Phai" HeaderText="Phái"  />
-            <asp:BoundField DataField="NgaySinh" HeaderText="Ngày Sinh"  />
+            <asp:BoundField DataField="NgaySinh" HeaderText="Ngày Sinh" DataFormatString="{0:dd/MM/yyyy}"  />
             <asp:BoundField DataField="NoiSinh" HeaderText="Nơi Sinh"  />
             <asp:BoundField DataField="MaPhong" HeaderText="Mã Phòng"  />
-            <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="bg-body-secondary" ShowDeleteButton="true"/>
+            <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="bg-body-secondary" ShowDeleteButton="true">
+            <ControlStyle CssClass="text-black" BackColor="Gainsboro"></ControlStyle>
+            </asp:CommandField>
         </Columns>
-        <HeaderStyle CssClass="bg-info" />
+        <PagerSettings FirstPageText="Đầu" PreviousPageText="Trước" 
+            NextPageText="Sau" LastPageText="Cuối"  />
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle CssClass="text-light" BackColor="#4682B4" Font-Bold="True" ForeColor="White"/>
+        <PagerStyle HorizontalAlign="Center" BackColor="#2461BF" ForeColor="White"  />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
         
     </asp:GridView>
 </asp:Content>
+
