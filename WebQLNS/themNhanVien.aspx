@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class=" m-auto w-50 ">
+   
+    <div class=" m-auto w-50 ">
         <div class="row mt-3 mb-2">
         <div class="col-md-2"> Họ Nhân Viên  </div>
             <div class="col-md-10">

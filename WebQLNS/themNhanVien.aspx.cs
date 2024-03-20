@@ -37,7 +37,7 @@ namespace WebQLNS
             //Câu truy vấn CSDL
             if (cmd.ExecuteNonQuery() > 0)
                 Response.Redirect("qlNhanVien.aspx");
-                lbThongBao.Text = "Thêm Nhân Viên Thành Công";              
+                              
             else           
                 lbThongBao.Text = "Thêm Nhân Viên Thất Bại";
         }
