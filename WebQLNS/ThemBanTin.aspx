@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="Scripts/ckeditor/ckeditor.js"></script>
 
-    <h2>Thêm mới bản tin</h2>
-     <div class=" m-auto w-50 ">
+    <h2>Thêm Mới Bản Tin</h2>
+     <div class=" m-auto w-75" >
         <div class="row mt-3 mb-2">
         <div class="col-md-2"> Tiêu Đề </div>
             <div class="col-md-10">
@@ -27,19 +27,19 @@
     <div class="row mb-2">
         <div class="col-md-2"> Hình Đại Diện</div>
             <div class="col-md-10">
-                <asp:FileUpload ID="fileUpHinh" runat="server" />
+                <asp:FileUpload ID="FHinh" runat="server" />
        </div>
     </div>
     <div class="row mb-2">
         <div class="col-md-2"> Ngày Đăng</div>
             <div class="col-md-10">
-                <asp:TextBox ID="txtNgayDang" CssClass="form-control"  runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNgayDang"  CssClass="form-control" TextMode="Date"  runat="server"></asp:TextBox>
        </div>
     </div>
        <div class="row mb-2">
         <div class="col-md-2"> Trạng Thái</div>
             <div class="col-md-10">
-                <asp:CheckBox ID="ckTrangThai" Text="Hiện" Checked="true" runat="server" />
+                <asp:CheckBox ID="ckbTrangThai" Text="Hiện" Checked="true" runat="server" />
        </div>
     </div>
          <div class="row mb-2">
@@ -54,11 +54,12 @@
          <div class="row mb-2">
         <div class="col-md-2"> </div>
             <div class="col-md-10">
-                <asp:Button ID="btnTheLoai" runat="server" Text="Save" OnClick="btnSave_Click" />
+                <asp:Button ID="btnTheLoai" runat="server" Text="Lưu" OnClick="btnSave_Click" />
+                <asp:Label ID="lbThongBao" runat="server" Text="" ForeColor="red"></asp:Label>
        </div>
     </div> 
   </div>
     <asp:SqlDataSource ID="sdsTheLoai" runat="server" 
         ConnectionString="<%$ ConnectionStrings:QLNhanVienConnectionString %>" 
-        SelectCommand="SELECT * FROM [TheLoai] ORDER BY [TenTheLoai], [Id]"></asp:SqlDataSource>
+        SelectCommand="SELECT * FROM [TheLoai]"></asp:SqlDataSource>
 </asp:Content>

@@ -10,7 +10,10 @@
     </div>
     <asp:SqlDataSource ID="sdsTinTuc" runat="server" 
         ConnectionString="<%$ ConnectionStrings:QLNhanVienConnectionString %>" 
-        SelectCommand="SELECT * FROM [BanTin]" DeleteCommand="DELETE FROM [BanTin] WHERE [Id] = @Id" InsertCommand="INSERT INTO [BanTin] ([TieuDe], [TomTat], [NoiDung], [Hinh], [NgayDang], [TrangThai], [TheLoaiID]) VALUES (@TieuDe, @TomTat, @NoiDung, @Hinh, @NgayDang, @TrangThai, @TheLoaiID)" UpdateCommand="UPDATE [BanTin] SET [TieuDe] = @TieuDe, [TomTat] = @TomTat, [NoiDung] = @NoiDung, [Hinh] = @Hinh, [NgayDang] = @NgayDang, [TrangThai] = @TrangThai, [TheLoaiID] = @TheLoaiID WHERE [Id] = @Id">
+        SelectCommand="SELECT * FROM [BanTin]" 
+        DeleteCommand="DELETE FROM [BanTin] WHERE [Id] = @Id" 
+        InsertCommand="INSERT INTO [BanTin] ([TieuDe], [TomTat], [NoiDung], [Hinh], [NgayDang], [TrangThai], [TheLoaiID]) VALUES (@TieuDe, @TomTat, @NoiDung, @Hinh, @NgayDang, @TrangThai, @TheLoaiID)" 
+        UpdateCommand="UPDATE [BanTin] SET [TieuDe] = @TieuDe, [TomTat] = @TomTat, [NoiDung] = @NoiDung, [Hinh] = @Hinh, [NgayDang] = @NgayDang, [TrangThai] = @TrangThai, [TheLoaiID] = @TheLoaiID WHERE [Id] = @Id">
         <DeleteParameters>
             <asp:Parameter Name="Id" Type="Int32" />
         </DeleteParameters>
@@ -35,17 +38,26 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="gvBanTin" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="sdsTinTuc" AllowSorting="True">
+    <asp:GridView ID="gvBanTin" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="sdsTinTuc" 
+        AllowSorting="True" CssClass="table table-bordered" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="TieuDe" HeaderText="TieuDe" SortExpression="TieuDe" />
-            <asp:BoundField DataField="TomTat" HeaderText="TomTat" SortExpression="TomTat" />
-            <asp:BoundField DataField="NoiDung" HeaderText="NoiDung" SortExpression="NoiDung" />
-            <asp:BoundField DataField="Hinh" HeaderText="Hinh" SortExpression="Hinh" />
-            <asp:BoundField DataField="NgayDang" HeaderText="NgayDang" SortExpression="NgayDang" />
-            <asp:CheckBoxField DataField="TrangThai" HeaderText="TrangThai" SortExpression="TrangThai" />
-            <asp:BoundField DataField="TheLoaiID" HeaderText="TheLoaiID" SortExpression="TheLoaiID" />
+            <asp:BoundField DataField="TieuDe" HeaderText="Tiêu Đề"  />
+            <asp:BoundField DataField="TomTat" ControlStyle-Width="100%" HeaderText="Tóm Tắt" SortExpression="TomTat" >
+            </asp:BoundField>
+            <asp:ImageField DataImageUrlField="hinh" HeaderText="Hình Minh Họa" DataImageUrlFormatString="~/uploads/{0}" ControlStyle-Width="100px" ></asp:ImageField>
+            <asp:BoundField DataField="TheLoaiID" HeaderText="Thể Loại" SortExpression="TheLoaiID" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ButtonType="Button" />
         </Columns>
+        
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#4682B4" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
 </asp:Content>

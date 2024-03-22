@@ -42,13 +42,13 @@ namespace WebQLNS
         protected global::System.Web.UI.WebControls.TextBox txtNoiDung;
 
         /// <summary>
-        /// fileUpHinh control.
+        /// FHinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUpHinh;
+        protected global::System.Web.UI.WebControls.FileUpload FHinh;
 
         /// <summary>
         /// txtNgayDang control.
@@ -60,13 +60,13 @@ namespace WebQLNS
         protected global::System.Web.UI.WebControls.TextBox txtNgayDang;
 
         /// <summary>
-        /// ckTrangThai control.
+        /// ckbTrangThai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckTrangThai;
+        protected global::System.Web.UI.WebControls.CheckBox ckbTrangThai;
 
         /// <summary>
         /// ddlTheLoai control.
@@ -85,6 +85,15 @@ namespace WebQLNS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnTheLoai;
+
+        /// <summary>
+        /// lbThongBao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbThongBao;
 
         /// <summary>
         /// sdsTheLoai control.

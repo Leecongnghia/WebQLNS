@@ -37,28 +37,29 @@
         </UpdateParameters>
 </asp:SqlDataSource>
 
-    <asp:GridView  ID="gvNhanVien" runat="server" AutoGenerateColumns="False" AlternatingRowStyle-Font-Size="Medium"
-        CssClass="  table-bordered table-hover w-100 text-center " AllowCustomPaging="True"
-        DataKeyNames="MaNV" DataSourceID="dsNhanVien" AllowPaging="True" PageSize="5" CellPadding="4"  GridLines="None" ForeColor="#333333">
+    <asp:GridView  ID="gvNhanVien" runat="server" AutoGenerateColumns="False" 
+        AlternatingRowStyle-Font-Size="Large" CssClass=" table table-bordered table-hover w-100 text-center " 
+        AllowCustomPaging="True" DataKeyNames="MaNV" DataSourceID="dsNhanVien" 
+        AllowPaging="true"  PageSize="5" >
         <AlternatingRowStyle Font-Size="Medium" BackColor="White"></AlternatingRowStyle>
         <Columns>
-            <asp:BoundField DataField="MaNV" HeaderText="Mã Nhân Viên"  ReadOnly="True"  />
-            <asp:BoundField DataField="HoNV" HeaderText="Họ Nhân Viên"  />
-            <asp:BoundField DataField="TenNV" HeaderText="Tên Nhân Viên"  />
-            <asp:CheckBoxField DataField="Phai" HeaderText="Phái"  />
-            <asp:BoundField DataField="NgaySinh" HeaderText="Ngày Sinh" DataFormatString="{0:dd/MM/yyyy}"  />
-            <asp:BoundField DataField="NoiSinh" HeaderText="Nơi Sinh"  />
-            <asp:BoundField DataField="MaPhong" HeaderText="Mã Phòng"  />
-            <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="bg-body-secondary" ShowDeleteButton="true">
-            <ControlStyle CssClass="text-black" BackColor="Gainsboro"></ControlStyle>
+            <asp:BoundField DataField="MaNV" HeaderText="Mã Nhân Viên" ReadOnly="True" />
+            <asp:BoundField DataField="HoNV" HeaderText="Họ Nhân Viên" />
+            <asp:BoundField DataField="TenNV" HeaderText="Tên Nhân Viên" />
+            <asp:CheckBoxField DataField="Phai" HeaderText="Phái" />
+            <asp:BoundField DataField="NgaySinh" HeaderText="Ngày Sinh" DataFormatString="{0:dd/MM/yyyy}" />
+            <asp:BoundField DataField="NoiSinh" HeaderText="Nơi Sinh" />
+            <asp:BoundField DataField="MaPhong" HeaderText="Mã Phòng" />
+            <asp:CommandField ShowEditButton="true" ButtonType="Button" ControlStyle-CssClass="bg-body-secondary" ShowDeleteButton="True">
+                <ControlStyle CssClass="text-black" BackColor="Gainsboro"></ControlStyle>
             </asp:CommandField>
         </Columns>
         <PagerSettings FirstPageText="Đầu" PreviousPageText="Trước" 
             NextPageText="Sau" LastPageText="Cuối"  />
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle CssClass="text-light" BackColor="#4682B4" Font-Bold="True" ForeColor="White"/>
-        <PagerStyle HorizontalAlign="Center" BackColor="#2461BF" ForeColor="White"  />
+        <HeaderStyle CssClass=" text-light" BackColor="#4682B4" Font-Bold="True" ForeColor="White"/>
+        <PagerStyle HorizontalAlign="Center" CssClass="pagination-ys" BackColor="#2461BF" ForeColor="White"  />
         <RowStyle BackColor="#EFF3FB" />
         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
         <SortedAscendingCellStyle BackColor="#F5F7FB" />
